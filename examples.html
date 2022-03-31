@@ -26,30 +26,30 @@
                 <a class="button" href="#">Examples</a>
             </nav>
             <div class="nav-buttons desktop">
-                <button class="red button">Log in</button>
-                <button class="blue button">Sign up</button>
+                <button class="red button login-form">Log in</button>
+                <button class="blue button signup-form">Sign up</button>
             </div>
         </header>
         <div class="menu">
-            <button>
+            <button class="close">
                 <svg>
                     <line x1="0" y1="0" x2="25" y2="25" style="stroke:black;"/>
                     <line x1="25" y1="0" x2="0" y2="25" style="stroke:black;"/>
                 </svg>
             </button>
             <nav class="list">
-                <a href="#">Log in</a>
-                <a href="#">Sign up</a>
+                <a class="login-form" href="#">Log in</a>
+                <a class="signup-form" href="#">Sign up</a>
                 <a href="examples.html">Examples</a>   
             </nav>
         </div>
-        <form class="authentication" action="" method="post" style="display:none">
+        <form class="authentication" action="" method="post">
             <div class="form-nav">
                 <div>
-                    <button class="form-login">Log in</button>
-                    <button class="form-signup">Sign up</button>
+                    <button type="button" class="form-login">Log in</button>
+                    <button type="button" class="form-signup">Sign up</button>
                 </div>
-                <button>
+                <button type="button" class="close">
                     <svg>
                         <line x1="0" y1="0" x2="25" y2="25" style="stroke:black;"/>
                         <line x1="25" y1="0" x2="0" y2="25" style="stroke:black;"/>
@@ -58,11 +58,12 @@
             </div>
             <label>Username: <input type="text"></label>
             <label>Password: <input type="password"></label>
-            <label>Repeat <br>password: <input type="password"></label>
-            <label>Email: <input type="email"></label>
-            <button class="red button">Log in</button>
-            <button class="blue button">Sign up</button>
+            <label class="signup">Repeat <br>password: <input type="password"></label>
+            <label class="signup"><span>Email: </span><input type="email"></label>
+            <button class="red button login">Log in</button>
+            <button class="blue button signup">Sign up</button>
         </form>
+        <div class="dark-background"></div>
         <div class="examples">
             <div>
                 <article>
@@ -281,5 +282,6 @@
                 </article>
             </div>
         </div>
+        <script src="index.js"></script>
     </body>
 </html>

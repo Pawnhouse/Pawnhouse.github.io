@@ -13,7 +13,7 @@ main{
 article{
     position: relative;
     padding: 20px;
-    width: 100%;
+    width: calc(100% - 30px);
     max-width: calc((100vh - 252px) / 0.915);
     border: 1px solid white;
 }

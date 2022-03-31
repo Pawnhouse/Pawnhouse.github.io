@@ -27,30 +27,30 @@
             <p class="center">
                 Hello, Username
             </p>
-            <button>
+            <button class="close">
                 <svg>
                     <line x1="0" y1="0" x2="25" y2="25" style="stroke:black;"/>
                     <line x1="25" y1="0" x2="0" y2="25" style="stroke:black;"/>
                 </svg>
             </button>
             <div class="list">
-                <a href="#">Save</a>   
+                <a class="save-form" href="#">Save</a>   
                 <a href="#">Add color</a>   
                 <a href="#">Delete color</a>   
-                <a href="examples.html">Saved</a>   
+                <a href="saved.html">Saved</a>   
                 <a href="examples.html">Examples</a>   
             </div>
         </div>
         <nav>
             <a class="button center" href="create.html">Generate</a>   
-            <a class="button center" href="examples.html">Saved</a>   
+            <a class="button center" href="saved.html">Saved</a>   
             <a class="button center" href="examples.html">Examples</a> 
         </nav>
         <form action="" method="post">
             <label>Name: <input type="text"></label>
             <button class="blue button">Save</button>
         </form>
-        <div class="dark-background" style="display: none;"></div>
+        <div class="dark-background"></div>
         <main>
             <div class="color"></div>
             <div class="color"></div>
@@ -59,7 +59,7 @@
             <div class="color"></div>
             <div class="action">
                 <button class="button">Generate</button>
-                <button class="button">Save</button>
+                <button class="button save-form">Save</button>
                 <button class="button">Add color</button>
                 <button class="button">Delete color</button>                
             </div>
@@ -92,5 +92,6 @@
                 <button class="button phone">Generate</button>
             </h2>
         </main>   
+        <script src="index.js"></script>
     </body>
 </html>
