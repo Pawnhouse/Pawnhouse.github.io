@@ -61,7 +61,6 @@ function signup(){
     open();
     let login = document.getElementsByClassName('login');
     let signup = document.getElementsByClassName('signup');
-    var i;
     for (let i = 0; i < login.length; i++)
         login[i].style.display = 'none';
     for (let i = 0; i < signup.length; i++)

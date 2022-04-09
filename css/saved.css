@@ -1,11 +1,11 @@
-label{
+.no-input{
     margin-bottom: 25px;
 }
-form .button{
+.choice-button{
     margin-left: 10px;
     margin-right: 10px;
 }
-main{
+.saved-palettes-list{
     margin: 20px;
     grid-template: 1fr 1fr 1fr / 1fr 1fr;
     justify-items: center;
@@ -20,23 +20,12 @@ article{
 article:hover{
     border: 1px solid gray;
     border-radius: 22px;
+    z-index: 2;
 }
-.palette{
+.saved-palette{
     width: 50%;
     height: 0;
     padding-top: 30.5%;
-}
-main > :nth-child(3n) .palette{
-    background: linear-gradient(to right, red 20%, yellow 20% 40%, green 40% 60%, blue 60% 80%, purple 80%);
-}
-main > :nth-child(3n + 1) .palette{
-    background: linear-gradient(to right, #e63946 20%, #f1faee 20% 40%, #a8dadc 40% 60%, #457b9d 60% 80%, #1d3557 80%);
-}
-main > :nth-child(3n + 2) .palette{
-    background: linear-gradient(to right, #f4f1de 20%, #e07a5f 20% 40%, #3d405b 40% 60%, #81b29a 60% 80%, #f2cc8f 80%);
-}
-main .likes svg:last-child{
-    display: none;
 }
 .cross{
     position: absolute;
@@ -61,7 +50,7 @@ article .likes{
 }
 
 @media screen and (max-width:600px){
-    main{
+    .saved-palettes-list{
         grid-template: repeat(6, 1fr) / 1fr;
         margin: 0;
     }
@@ -70,12 +59,12 @@ article .likes{
         border-radius: 0;
         padding: 10px 0;
         height: calc(55vw + 80px);
-        max-width: unset;
+        max-width: none;
     }
     article:hover{
         border: none;
     }
-    .palette{
+    .saved-palette{
         width: 90%;
         height: 0;
         padding-top: 55%;
@@ -85,12 +74,12 @@ article .likes{
         top: 5px;
     }
     article .color-info{
-        top: unset;
+        top: auto;
         bottom: 20px;
         left: 10px;
     }
     article .likes{
-        left: unset;
+        left: auto;
         bottom: 55px;
         right: 10px;
     }

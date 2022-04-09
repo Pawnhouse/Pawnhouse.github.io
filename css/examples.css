@@ -1,14 +1,8 @@
-header{
-    position: unset;
-}
 .examples{
     display: grid;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
     font-size: 24px;
-}
-.examples > div{
-    display: flex;
-    justify-content: center;
+    margin-top: 80px;
 }
 .examples article{
     max-width: calc((100vh - 326px) / 1.83);
@@ -19,39 +13,22 @@ header{
     align-items: center;
     margin: 20px;
 }
-.palette{
+.examples .palette{
     width: 100%;
     padding-top: 61%;
-    border: 1px solid gray;
-    border-radius: 10px;
 }
-button svg{
+.like-margin{
     margin: 5px;
-}
-.examples > :nth-child(3n) .palette{
-    background: linear-gradient(to right, red 20%, yellow 20% 40%, green 40% 60%, blue 60% 80%, purple 80%);
-}
-.examples > :nth-child(3n + 1) .palette{
-    background: linear-gradient(to right, #e63946 20%, #f1faee 20% 40%, #a8dadc 40% 60%, #457b9d 60% 80%, #1d3557 80%);
-}
-.examples > :nth-child(3n + 2) .palette{
-    background: linear-gradient(to right, #f4f1de 20%, #e07a5f 20% 40%, #3d405b 40% 60%, #81b29a 60% 80%, #f2cc8f 80%);
-}
-.examples svg:last-child{
-    display: none;
 }
 
 @media screen and (max-width:600px){
-    header{
-        position: fixed;
-    }
     .examples{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(12, 1fr);
         margin: 100px 0;
     }
     .examples article{
-        max-width: unset;
+        max-width: none;
         margin: 20px 0;
     }
 
