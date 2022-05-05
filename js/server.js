@@ -113,6 +113,7 @@ async function uploadLikes(likesNumber, paletteId) {
     try {
         let path = 'examples/' + paletteId;
         await patchData(path, {likes: likesNumber});
+        const user = await getData(path + '/user');
         path = 'users/' + user + '/' + paletteId;
         await patchData(path, {likes: likesNumber});       
     } catch(e) { }
