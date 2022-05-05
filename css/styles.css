@@ -55,6 +55,9 @@ table {
 	font-family: 'Roboto'; 
 	src: url('../fonts/Roboto-Regular.ttf'); 
 }
+html, body{
+	height: 100%;
+}
 body{
 	font-family: Roboto, serif;
 }
@@ -76,6 +79,13 @@ svg{
     justify-content: center;
 	align-items: center;
 }
+.main{
+	position: absolute;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 
 header{
 	position: fixed;
@@ -87,12 +97,23 @@ header{
     width: 100%;
     height: 80px;
     background-color: rgba(200, 200, 200, 0.5);
-	z-index: 2;
+	z-index: 3;
 }
 .logo{
-	height: 60px;
+	width: 193px;
 	margin-left: 30px;
 	border-radius: 5px;
+	background-image: url(../img/color-small.png);
+	background-position: bottom;
+	transition: 0.5s ease;
+}
+.no-logo{
+	height: 0;
+	margin-bottom: 60px;
+}
+.display-logo{
+	height: 60px;
+	margin-bottom: 0;
 }
 .hamburger{
 	display: none;
@@ -144,7 +165,7 @@ form{
     top: 50%;
     transform: translate(-50%, -50%);
 	width: fit-content;
-	display: none;
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: white;
@@ -168,14 +189,17 @@ form .button{
 }
 .form-signup{
 	padding: 5px;
-	border-bottom: 2px solid #2DB9F4;
+	border: 0px solid #2DB9F4;
 	font-size: 18px;
 }
 .form-login{
 	margin-right: 20px;
 	padding: 5px;
-	border-bottom: 2px solid #F42D2D;
+	border: 0px solid #F42D2D;
 	font-size: 18px;
+}
+.form-nav-active{
+	border-bottom-width: 2px;
 }
 input{
 	padding-left: 10px;
@@ -185,7 +209,7 @@ input{
 	border: 1.5px solid black;
 	border-radius: 5px;
 }
-label{
+.form-label{
 	margin: 15px 40px;
 	width: 300px;
 	display: flex;
@@ -197,20 +221,20 @@ label{
 	position: fixed;
 	top: 0;
 	width: 100%;
-	height: 100vh;
+	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.3);
 	z-index: 3;
 }
 
 .menu{
-	display: none;
+	display: grid;
 	grid-template: 50px 1fr / 1fr 50px;
 	width: 60%;
-	height: 100vh;
 	position: fixed;
 	background-color: white;
 	top: 0;
 	right: 0;
+	bottom: 0;
 	z-index: 4;
 }
 .menu .close{
@@ -281,7 +305,7 @@ label{
 	flex-flow: column;
 	justify-content: space-between;
 	width: 20%;
-	height: 15vh;
+	height: 150px;
 }
 .phone{
     display: none;
@@ -303,7 +327,7 @@ label{
     background: linear-gradient(to right, #f4f1de 20%, #e07a5f 20% 40%, #3d405b 40% 60%, #81b29a 60% 80%, #f2cc8f 80%);
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width:600px) {
 	.desktop{
         display: none;
     }
@@ -323,19 +347,25 @@ label{
 		border:none;
 		border-radius: 0;
 		width: 100%;
-		height: 100vh;
+		left:0;
+		top:0;
+		bottom:0;
+		transform: none;
 	}
-	label{
+	form{
+		width: 95%;
+	}
+	.form-label{
 		margin-left: 10px;
 		margin-right: 10px;
 		justify-content: space-around;
-		width: calc(95vw - 20px);
+		width: 100%;
 	}
 	.input-label span{
 		min-width: 80px;
 	}
 	.input-label input{
-		width: 50vw;
+		width: 50%;
 	}
 
 	#generate{
@@ -352,6 +382,6 @@ label{
 		width: 100%;
 		top: 100px;
 		right: 0;
-		height: 80vh;
+		height: 80%;
 	}
 }

@@ -1,9 +1,11 @@
 .no-input{
     margin-bottom: 25px;
+    justify-content: center;
 }
 .choice-button{
     margin-left: 10px;
     margin-right: 10px;
+    min-width: 70px;
 }
 .saved-palettes-list{
     margin: 20px;
@@ -14,7 +16,6 @@ article{
     position: relative;
     padding: 20px;
     width: calc(100% - 30px);
-    max-width: calc((100vh - 252px) / 0.915);
     border: 1px solid white;
 }
 article:hover{
@@ -31,6 +32,7 @@ article:hover{
     position: absolute;
     right: 20px;
     top: 20px;
+    z-index: 1.5;
 }
 article .color-info{
     position: absolute;
@@ -39,6 +41,7 @@ article .color-info{
 }
 article .color-info .name{
     font-size: 24px;
+    cursor: pointer;
 }
 article .likes{
     font-size: 24px;
@@ -49,7 +52,7 @@ article .likes{
     align-items: center;
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width:600px) {
     .saved-palettes-list{
         grid-template: repeat(6, 1fr) / 1fr;
         margin: 0;
@@ -58,8 +61,6 @@ article .likes{
         border: none;
         border-radius: 0;
         padding: 10px 0;
-        height: calc(55vw + 80px);
-        max-width: none;
     }
     article:hover{
         border: none;
@@ -68,6 +69,10 @@ article .likes{
         width: 90%;
         height: 0;
         padding-top: 55%;
+    }
+    .info-and-likes{
+        position: relative;
+        height: 100px;
     }
     .cross{
         right: 0px;

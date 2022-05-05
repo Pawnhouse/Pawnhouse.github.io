@@ -3,14 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="#">
         <title>Color Scheme</title>
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/create.css">
+        <link rel="stylesheet" href="css/examples.css">
+        <link rel="stylesheet" href="css/saved.css">
     </head>
-    <body>
+    <body style="visibility:hidden">
         <header>
-            <a href="">
-                <img src="img/color.png" alt="color" class="logo">
-            </a>
+            <a href="#" class="logo no-logo index-route"></a>
             <button class="hamburger phone">
                 <svg>
                     <line x1="0" y1="1" x2="25" y2="1" style="stroke:black;"/>
@@ -19,87 +21,194 @@
                 </svg>
             </button>  
             <nav class="desktop header-nav">
-                <a class="button" href="#generate">Generate</a>
-                <a class="button" href="#save">Save</a>
-                <a class="button" href="#watch">Watch</a>
-                <a class="button" href="examples.html">Examples</a>
+                <a class="button index-route" href="#generate">Generate</a>
+                <a class="button index-route" href="#save">Save</a>
+                <a class="button index-route" href="#watch">Watch</a>
+                <a class="button examples-route" href="#">Examples</a>
             </nav>
             <div class="nav-buttons desktop">
-                <button class="red button login-form">Log in</button>
-                <button class="blue button signup-form">Sign up</button>
+                <button class="red button login-open">Log in</button>
+                <button class="blue button signup-open">Sign up</button>
             </div>
-        </header>
+            <button class="hello desktop">
+                Hello, Username
+            </button>
+        </header>      
+        <nav class="desktop main-functions-nav">
+            <a class="button center create-route" href="#">Generate</a>   
+            <a class="button center saved-route" href="#">Saved</a>   
+            <a class="button center examples-route" href="#">Examples</a> 
+            <a class="button center exit" href="#">Exit</a> 
+        </nav>
         <div class="menu">
-            <button class="close">
+            <button class="close close-menu">
                 <svg>
                     <line x1="0" y1="0" x2="25" y2="25" style="stroke:black;"/>
                     <line x1="25" y1="0" x2="0" y2="25" style="stroke:black;"/>
                 </svg>
             </button>
             <nav class="list">
-                <a href="#" class="login-form">Log in</a>
-                <a href="#" class="signup-form">Sign up</a>
-                <a href="examples.html">Examples</a>   
+                <a href="#" class="login-open no-auth-display">Log in</a>
+                <a href="#" class="signup-open no-auth-display">Sign up</a>
+                <a class="display-save-form only-create auth-display" href="#">Save</a> 
+                <a class="add-color only-create auth-display" href="#">Add color</a> 
+                <a class="delete-color only-create auth-display" href="#">Delete color</a>
+                <a class="create-route auth-display" href="#">Generate</a>
+                <a class="saved-route auth-display" href="#">Saved</a>
+                <a class="examples-route" href="#">Examples</a>
+                <a class="exit auth-display" href="#">Exit</a>
             </nav>
         </div>
+
         <form class="authentication" action="" method="post">
             <div class="form-nav">
                 <div>
-                    <button type="button" class="form-login">Log in</button>
-                    <button type="button" class="form-signup">Sign up</button>
+                    <button type="button" class="form-login login-open">Log in</button>
+                    <button type="button" class="form-signup signup-open">Sign up</button>
                 </div>
-                <button type="button" class="close">
+                <button type="button" class="close close-form">
                     <svg>
                         <line x1="0" y1="0" x2="25" y2="25" style="stroke:black;"/>
                         <line x1="25" y1="0" x2="0" y2="25" style="stroke:black;"/>
                     </svg>
                 </button>                
             </div>
-            <label class="input-label">Username: <input type="text"></label>
-            <label class="input-label">Password: <input type="password"></label>
-            <label class="signup input-label">Repeat <br>password: <input type="password"></label>
-            <label class="signup input-label"><span>Email: </span><input type="email"></label>
-            <button class="red button login">Log in</button>
-            <button class="blue button signup">Sign up</button>
+            <label class="form-label input-label">Username: <input type="text"></label>
+            <label class="form-label input-label">Password: <input type="password"></label>
+            <label class="form-label signup input-label">Repeat <br>password: <input type="password"></label>
+            <label class="form-label signup input-label"><span>Email: </span><input type="email"></label>
+            <button type="button" class="red button login request-login">Log in</button>
+            <button type="button" class="blue button signup request-signup">Sign up</button>
         </form>
-        <div class="dark-background"></div>
-        <div id="main" class="page">
-            <img class="main-logo" src="img/color.png" alt="color">
-            <p>
-                This is best web-application for combination of colors.
-                Create, try, enjoy. And of course have fun.
-            </p>
+        <form class="save-palette-form" action="" method="post">
+            <label class="form-label input-label">Name: <input type="text"></label>
+            <button type="button" class="blue button">Save</button>
+        </form>
+        <form class="delete-palette-form" action="" method="post">
+            <label class="form-label no-input">Delete?</label>
+            <div>
+                <button type="button" class="red button choice-button">Yes</button>
+                <button type="button" class="blue button choice-button">No</button>
+            </div>
+        </form>
 
-        </div>
-        <div id="generate" class="page">
-            <div class="gradient"></div>
-            <div class="info">
-                <h2><a>Generate colors</a></h2>
+        <div class="dark-background"></div>
+        <div class="index main-content">
+            <div id="main" class="page">
+                <img class="main-logo" src="img/color.png" alt="color">
                 <p>
-                    To create palettes you can just generate it and choose colors that you like.
-                    It is possible to change number of colors in the palette.
+                    This is best web-application for combination of colors.
+                    Create, try, enjoy. And of course have fun.
                 </p>
             </div>
-        </div>
-        <div id="save" class="page">
-            <div class="gradient"></div>
-            <div class="info">
-                <h2><a>Save good combinations</a></h2>
-                <p>
-                    You should save palette if a nice combination is created.                    
-                </p>
+            <div id="generate" class="page">
+                <div class="gradient"></div>
+                <div class="info">
+                    <h2><a>Generate colors</a></h2>
+                    <p>
+                        To create palettes you can just generate it and choose colors that you like.
+                        It is possible to change number of colors in the palette.
+                    </p>
+                </div>
+            </div>
+            <div id="save" class="page">
+                <div class="gradient"></div>
+                <div class="info">
+                    <h2><a>Save good combinations</a></h2>
+                    <p>
+                        You should save palette if a nice combination is created.                    
+                    </p>
+                </div>
+            </div>
+            <div id="watch" class="page">
+                <div class="gradient"></div>
+                <div class="info">
+                    <h2><a>Watch best examples</a></h2>
+                    <p>
+                        There are a lot of pelettes in this web-application. 
+                        You a free to watch, like or use them.
+                    </p>
+                </div>
             </div>
         </div>
-        <div id="watch" class="page">
-            <div class="gradient"></div>
-            <div class="info">
-                <h2><a>Watch best examples</a></h2>
-                <p>
-                    There are a lot of pelettes in this web-application. 
-                    You a free to watch, like or use them.
-                </p>
+        <div class="examples main main-content">
+            <div class="center">
+                <article>
+                    <div class="palette"></div>
+                    <span></span>
+                    <button class="like-margin">
+                        <svg>
+                            <g>
+                                <path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path>
+                            </g>
+                        </svg>
+                        <svg class="red-like">
+                            <g fill="red">
+                                <path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12z"></path>
+                            </g>
+                        </svg>
+                    </button>   
+                </article>
             </div>
         </div>
-        <script src="index.js"></script>
+        <main class="main main-content create">
+            <div class="palette desktop create-palette"></div>
+            <div class="action desktop">
+                <button class="button generate-palette">Generate</button>
+                <button class="button display-save-form">Save</button>
+                <button class="button add-color">Add color</button>
+                <button class="button delete-color">Delete color</button>                
+            </div>
+            <div class="palette-bottom">
+                <div class="options">
+                    <button class="button block-color">Block</buton>
+                    <button class="button copy-color">Copy</button>
+                    <label class="button change-color center"><input type="color" class="hidden-color-input">Change</label>
+                </div>
+            </div>
+            <h2>
+                <button class="button phone generate-palette">Generate</button>
+            </h2>
+        </main>
+        <div class="saved-palettes-list main saved main-content">
+            <article>
+                <div class="palette palette1 saved-palette"></div>
+                <button class="cross deleting-form">
+                    <svg>
+                        <line x1="0" y1="0" x2="25" y2="25" style="stroke:black;"/>
+                        <line x1="25" y1="0" x2="0" y2="25" style="stroke:black;"/>
+                    </svg>
+                </button>
+                <div class="info-and-likes">
+                    <span class="color-info">
+                        <a class="name" href="#">Color 1</a><br><br>
+                    </span>
+                    <div class="likes">
+                        <span></span>
+                        <button class="center">
+                            <svg>
+                                <g>
+                                    <path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path>
+                                </g>
+                            </svg>
+                            <svg class="red-like">
+                                <g fill="red">
+                                    <path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12z"></path>
+                                </g>
+                            </svg>
+                        </button>      
+                    </div>
+                </div>                
+            </article>
+        </div>   
+
+        <script src="js/router.js"></script>
+        <script src="js/server.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/main-page.js"></script>
+        <script src="js/examples.js"></script>
+        <script src="js/create.js"></script>
+        <script src="js/saved.js"></script>
+        <script src="js/action.js"></script>
     </body>
 </html>

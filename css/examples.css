@@ -2,10 +2,8 @@
     display: grid;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
     font-size: 24px;
-    margin-top: 80px;
 }
 .examples article{
-    max-width: calc((100vh - 326px) / 1.83);
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -21,11 +19,10 @@
     margin: 5px;
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width:600px) {
     .examples{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(12, 1fr);
-        margin: 100px 0;
     }
     .examples article{
         max-width: none;
