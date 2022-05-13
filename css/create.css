@@ -32,6 +32,11 @@
 .create-palette{
     grid-column: 1 / -2;
 }
+.fixed-size-button{
+    width: 120px;
+    height: 41px;
+    padding: 0;
+}
 .main{
     margin-top: 20px;
     margin-left: 20px;
@@ -79,10 +84,14 @@
     }
     .options .button{
         font-size: 13px;
+    }
+    .fixed-size-button{
         width: 100px;
+        height: 35px;
     }
     .small-button{
-        padding: 5px 10px;
+        width: 80px;
+        height: 25px;
     }
     .main .action{
         display: none;
